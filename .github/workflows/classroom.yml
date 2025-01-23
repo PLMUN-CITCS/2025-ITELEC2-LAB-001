@@ -1,0 +1,77 @@
+name: Check Student Submission
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify-submission:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+
+    - name: Check for required files
+      run: |
+        echo "Checking required files..."
+        if [ ! -f "hello.py" ]; then
+          echo "::error:: Missing hello.py file"
+          exit 1
+        fi
+        if [ ! -f "intro.txt" ]; then
+          echo "::error:: Missing intro.txt file"
+          exit 1
+        fi
+        echo "All required files are present."
+
+    - name: Validate intro.txt contents
+      run: |
+        echo "Validating intro.txt content..."
+        NAME_PRESENT=$(grep -c "Name:" intro.txt || true)
+        COURSE_PRESENT=$(grep -c "Course:" intro.txt || true)
+        INTEREST_PRESENT=$(grep -c "Interests in programming:" intro.txt || true)
+
+        if [ "$NAME_PRESENT" -eq 0 ]; then
+          echo "::error:: 'Name' field is missing in intro.txt"
+          exit 1
+        fi
+
+        if [ "$COURSE_PRESENT" -eq 0 ]; then
+          echo "::error:: 'Course' field is missing in intro.txt"
+          exit 1
+        fi
+
+        if [ "$INTEREST_PRESENT" -eq 0 ]; then
+          echo "::error:: 'Interests in programming' field is missing in intro.txt"
+          exit 1
+        fi
+
+        echo "intro.txt is properly filled out."
+
+    - name: Run hello.py script
+      run: |
+        echo "Running hello.py..."
+        python3 hello.py | tee output.log
+        if ! grep -q "Hello, World!" output.log; then
+          echo "::error:: hello.py does not print 'Hello, World!'"
+          exit 1
+        fi
+        echo "hello.py executed successfully."
+
+    - name: Generate Results Summary
+      run: |
+        echo "Generating results summary..."
+        echo "Submission Verification Report" > report.txt
+        echo "---------------------------------" >> report.txt
+        echo "Files: Passed" >> report.txt
+        echo "intro.txt: Passed" >> report.txt
+        echo "hello.py Execution: Passed" >> report.txt
+        cat report.txt
+
+    - name: Upload Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: submission-report
+        path: report.txt
