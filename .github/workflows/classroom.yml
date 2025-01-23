@@ -75,7 +75,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "actions@github.com"
 
-        git add feedback_report.txt
+        git add report.txt
         git commit -m "Added automated feedback report"
         git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
 
