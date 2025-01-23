@@ -1,74 +1,55 @@
-name: Check Student Submission
+name: Verify Python and Git Exercise
 
 on:
   push:
     branches:
-      - main
+      - main  # or any default branch you're using
 
 jobs:
-  verify-submission:
+  check_assignment:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Check for required files
+    - name: Check Hello.py output
       run: |
-        echo "Checking required files..."
-        if [ ! -f "hello.py" ]; then
-          echo "::error:: Missing hello.py file"
-          exit 1
+        python3 hello.py > output.txt
+        if ! grep -q "Hello world!" output.txt; then
+          echo "Test Failed: Hello.py does not print 'Hello world!'" >> result.txt
+        else
+          echo "Test Passed: Hello.py prints 'Hello world!'" >> result.txt
         fi
-        if [ ! -f "intro.txt" ]; then
-          echo "::error:: Missing intro.txt file"
-          exit 1
+        if ! grep -qF "$(cat intro.txt)" output.txt; then
+          echo "Test Failed: Hello.py does not print the content of intro.txt" >> result.txt
+        else
+          echo "Test Passed: Hello.py prints the content of intro.txt" >> result.txt
         fi
-        echo "All required files are present."
 
-    - name: Validate intro.txt contents
+    - name: Check Intro.txt content
       run: |
-        echo "Validating intro.txt content..."
-        NAME_PRESENT=$(grep -c "Name:" intro.txt || true)
-        COURSE_PRESENT=$(grep -c "Course:" intro.txt || true)
-        INTEREST_PRESENT=$(grep -c "Interests in programming:" intro.txt || true)
-
-        if [ "$NAME_PRESENT" -eq 0 ]; then
-          echo "::error:: 'Name' field is missing in intro.txt"
-          exit 1
+        intro_regex="^Name: .+\nCourse: .+\nInterests in programming: .+$"
+        if ! grep -qP "$intro_regex" intro.txt; then
+          echo "Test Failed: Intro.txt does not follow the correct format" >> result.txt
+        else
+          echo "Test Passed: Intro.txt follows the correct format" >> result.txt
         fi
 
-        if [ "$COURSE_PRESENT" -eq 0 ]; then
-          echo "::error:: 'Course' field is missing in intro.txt"
-          exit 1
-        fi
-
-        if [ "$INTEREST_PRESENT" -eq 0 ]; then
-          echo "::error:: 'Interests in programming' field is missing in intro.txt"
-          exit 1
-        fi
-
-        echo "intro.txt is properly filled out."
-
-    - name: Run hello.py script
+    - name: Check Commit Message
       run: |
-        echo "Running hello.py..."
-        python3 hello.py | tee output.log
-        if ! grep -q "Hello, World!" output.log; then
-          echo "::error:: hello.py does not print 'Hello, World!'"
-          exit 1
+        commit_message=$(git log -1 --pretty=%B)
+        if [[ "$commit_message" != "My first Python program" ]]; then
+          echo "Test Failed: Commit message is not 'My first Python program'" >> result.txt
+        else
+          echo "Test Passed: Commit message is correct" >> result.txt
         fi
-        echo "hello.py executed successfully."
 
-    - name: Generate Results Summary
-      run: |
-        echo "Generating results summary..."
-        echo "Submission Verification Report" > report.txt
-        echo "---------------------------------" >> report.txt
-        echo "Files: Passed" >> report.txt
-        echo "intro.txt: Passed" >> report.txt
-        echo "hello.py Execution: Passed" >> report.txt
-        cat report.txt
+    - name: Upload Feedback Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: feedback_report
+        path: result.txt
 
     - name: Upload Results
       uses: actions/upload-artifact@v4
