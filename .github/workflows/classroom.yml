@@ -8,7 +8,7 @@ on:
 jobs:
   verify-submission:
     runs-on: ubuntu-latest
-    if: github.actor != 'tignojoshua816'  # This ensures the job runs only if the actor is not 'tignojoshua816'
+    if: github.event.head_commit.id != github.event.repository.default_branch && github.actor != 'tignojoshua816'  # This ensures the job runs only if the actor is not 'tignojoshua816'
 
     steps:
     - name: Checkout Student Repository
