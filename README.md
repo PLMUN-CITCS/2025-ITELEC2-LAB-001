@@ -76,7 +76,7 @@ git add .
 Write a meaningful commit message:
 
 ```bash
-git commit -m "Completed Hello World assignment"
+git commit -m "My first Python program"
 ```
 
 4. Push your changes to GitHub:
