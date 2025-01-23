@@ -30,7 +30,7 @@ git clone https://github.com/PLMUN-CITCS/itelec2-s02-e01-[your username].git
 4. Navigate into the cloned folder:
 
 ```bash
-cd itelec2-s02-e01-[your username].git
+cd itelec2-s02-e01-[your username]
 ```
 
 ### **Step 3: Complete the Assignment**
