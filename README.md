@@ -24,13 +24,13 @@ Welcome to your first GitHub Classroom assignment! Follow the instructions caref
 3. Open your terminal (or Git Bash, Command Prompt, or PowerShell) and run:
 
 ```bash
-git clone https://github.com/PLMUN-CITCS/itelec2-s01-e01-[your username].git
+git clone https://github.com/PLMUN-CITCS/itelec2-s02-e01-[your username].git
 ```
 
 4. Navigate into the cloned folder:
 
 ```bash
-cd itelec2-s01-e01-[your username].git
+cd itelec2-s02-e01-[your username].git
 ```
 
 ### **Step 3: Complete the Assignment**
