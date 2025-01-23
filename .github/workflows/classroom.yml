@@ -45,12 +45,6 @@ jobs:
           echo "Test Passed: Commit message is correct" >> result.txt
         fi
 
-    - name: Upload Feedback Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: feedback_report
-        path: result.txt
-
     - name: Upload Results
       uses: actions/upload-artifact@v4
       with:
