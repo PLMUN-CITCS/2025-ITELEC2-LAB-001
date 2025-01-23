@@ -42,7 +42,7 @@ Example (Python - hello.py):
 
 1. `hello.py` (Python)
 ```python
-print("Hello, World!")
+print("Hello world!")
 ```
 
 2. Create the intro.txt file
@@ -52,6 +52,7 @@ Name: [Your Full Name]
 Course: [Your Course Name]
 Interests in programming: [Your Interests]
 ```
+Also, print the same information in your hello.py
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
