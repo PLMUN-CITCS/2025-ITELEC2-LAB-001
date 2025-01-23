@@ -30,7 +30,7 @@ git clone https://github.com/PLMUN-CITCS/itelec2-s01-e01-[your username].git
 4. Navigate into the cloned folder:
 
 ```bash
-cd hello-world-assignment
+cd itelec2-s01-e01-[your username].git
 ```
 
 ### **Step 3: Complete the Assignment**
@@ -45,7 +45,7 @@ Example (Python - hello.py):
 print("Hello, World!")
 ```
 
-2. Update the intro.txt file
+2. Create the intro.txt file
 Open the intro.txt file in a text editor and provide the following details:
 ```txt
 Name: [Your Full Name]
