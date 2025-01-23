@@ -8,15 +8,9 @@ on:
 jobs:
   verify-submission:
     runs-on: ubuntu-latest
+    if: github.actor != 'tignojoshua816'  # This ensures the job runs only if the actor is not 'tignojoshua816'
 
     steps:
-    - name: Check if user is not tignojoshua816
-      run: |
-        if [[ "${{ github.actor }}" == "tignojoshua816" ]]; then
-          echo "Push made by tignojoshua816. Skipping tests." 
-          exit 0
-        fi
-        
     - name: Checkout Student Repository
       uses: actions/checkout@v4
       with:
