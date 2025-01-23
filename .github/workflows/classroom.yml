@@ -77,7 +77,7 @@ jobs:
 
         git add feedback_report.txt
         git commit -m "Added automated feedback report"
-        git push origin main
+        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
 
     - name: Upload Results
       uses: actions/upload-artifact@v4
