@@ -70,15 +70,6 @@ jobs:
         echo "hello.py Execution: Passed" >> report.txt
         cat report.txt
 
-    - name: Commit Feedback Report
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "actions@github.com"
-
-        git add report.txt
-        git commit -m "Added automated feedback report"
-        git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
-
     - name: Upload Results
       uses: actions/upload-artifact@v4
       with:
