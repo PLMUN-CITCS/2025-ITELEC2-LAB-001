@@ -133,6 +133,6 @@ git push origin main
 ### **Step 5: Submit Your Repository Link**
 Once your changes have been pushed:
 1. Visit your GitHub repository online.
-2. Copy the repository URL from your browser (e.g., https://github.com/your-username/hello-world-assignment).
+2. Copy the repository URL from your browser (e.g., https://github.com/PLMUN-CITCS/itelec2-s02-e01-[your username).
 3. Submit the repository link to your instructor via the classroom portal or as instructed.
 
