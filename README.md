@@ -20,7 +20,7 @@ Welcome to your first GitHub Classroom assignment! Follow the instructions caref
 ### **Step 1.2: Setup your Git Environment**
 1. Create a GitHub Account:
 ```bash
-[https://git-scm.com/downloads](https://github.com/signup?source=login)
+https://github.com/signup?source=login
 ```
    
 2. Download and Install Git on your Laptop/Desktop:
