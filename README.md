@@ -1,5 +1,5 @@
-# ITELEC 2 - Python Programming - Session 02 - Exercise 01
-GitHub Classroom assignment for Hello World and Introduction
+# ITELEC 2 - Python Programming
+Laboratory Activity # 01 - Introduction to Git and a Python Hello World Program
 
 # **Hello World Assignment**
 
