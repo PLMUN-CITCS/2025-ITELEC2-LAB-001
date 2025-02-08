@@ -1,3 +1,0 @@
-Name: Joshua Tigno
-Course: BSCpE
-Interests in programming: Arduino, Raspberry Pi
