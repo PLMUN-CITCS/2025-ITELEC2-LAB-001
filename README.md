@@ -1,10 +1,6 @@
 # ITELEC 2 - Python Programming
 Laboratory Activity # 01 - Introduction to Git and a Python Hello World Program
 
-# **Hello World Assignment**
-
-Welcome to your first GitHub Classroom assignment! Follow the instructions carefully to complete and submit your work.
-
 ---
 
 ## **Instructions**
@@ -78,6 +74,11 @@ cd <local_repo_folder>
 ```
 
 ### **Step 3: Complete the Assignment**
+
+
+# **Hello World Assignment**
+
+Welcome to your first GitHub Classroom assignment! Follow the instructions carefully to complete and submit your work.
 
 1. Write a "Hello World" Program
 Create a simple program in Python programming language. Save the file inside the repository folder.
