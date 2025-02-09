@@ -79,29 +79,71 @@ cd <local_repo_folder>
 # **Hello World Assignment**
 
 Welcome to your first GitHub Classroom assignment! Follow the instructions carefully to complete and submit your work.
+**Objectives**
+- Learn Basic Python: Write a simple Python program that prints output to the console.
+- Practice File Management: Create and update files (hello.py and intro.txt) within your GitHub Classroom repository.
+- Integrate Details: Ensure your program echoes both a standard greeting and your personal introductory information.
+- Develop Version Control Skills: Commit and push changes to your repository according to assignment guidelines.
 
-1. Write a "Hello World" Program
-Create a simple program in Python programming language. Save the file inside the repository folder.
+**Folder Structure and Naming Conventions**
+- Repository Root: All files should reside in the root folder of your cloned repository.
+- Python File:
+   - Name: hello.py
+   - Purpose: Contains your Python code that prints the desired output.
+- Text File:
+   - Name: intro.txt
+   - Purpose: Contains your personal information in a specified format.
 
-2. Edit the `hello.py` (Python) in your cloned repository.
-```python
-print("Hello world!")
-```
-
-3. Create the `intro.txt` file and Open the `intro.txt` file in a text editor and provide the following details:
+**Desired Output**
+When `hello.py` is executed, the console output should be:
 ```txt
+Hello world!
 Name: [Your Full Name]
 Course: [Your Course Name]
 Interests in programming: [Your Interests]
 ```
+Make sure that your program exactly prints these lines (replacing the placeholders with your actual information).
 
-4. Edit `hello.py`. Print the same information in your indicated in the `intro.txt`
-```python
-print("Hello world!")
-print("Name: [Your Full Name]")
-print("Course: [Your Course Name]")
-print("Interests in programming: [Your Interests]")
-```
+**Notable Observations**
+- Consistency is Key: Both hello.py and intro.txt must be located in the repository’s root directory to ensure proper recognition during grading.
+- Naming Conventions: Stick to the provided file names (hello.py and intro.txt) to avoid any issues with automatic grading.
+- Program Execution: Verify that your Python script runs correctly without errors before submission.
+- Information Duplication: Note that the details provided in intro.txt are also printed in hello.py—this redundancy is intentional to reinforce file editing and output formatting skills.
+- Version Control: Regular commits with clear messages help track your progress and make it easier to identify issues if any arise.
+
+**Step-by-Step Instructions**
+1. Write a "Hello World" Program
+Create a simple program in Python programming language. Save the file inside the repository folder.
+
+2. Create and Edit `hello.py`
+- Initial Code: Create or open hello.py and add the following code to print a simple greeting:
+   ```python
+   print("Hello world!")
+   ```
+- Update Code: Later, modify hello.py to include your personal details. The final version should be:
+   ```python
+   print("Hello world!")
+   print("Name: [Your Full Name]")
+   print("Course: [Your Course Name]")
+   print("Interests in programming: [Your Interests]")
+   ```
+   *Replace [Your Full Name], [Your Course Name], and [Your Interests] with your actual details.*
+
+3. Create and Populate `intro.txt`
+   - File Creation: In the repository root, create a file named intro.txt.
+   - Add Details: Open intro.txt in a text editor and include:
+   ```txt
+   Name: [Your Full Name]
+   Course: [Your Course Name]
+   Interests in programming: [Your Interests]
+   ```
+   *Again, replace the placeholders with your actual information.*
+
+**Conclusion**
+By following these refined instructions, you will:
+- Successfully complete a foundational programming assignment.
+- Learn the importance of folder organization, file naming, and version control.
+- Develop a better understanding of how to integrate multiple file formats (code and text) to create a cohesive project.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
