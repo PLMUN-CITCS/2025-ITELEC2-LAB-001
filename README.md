@@ -80,23 +80,27 @@ cd <local_repo_folder>
 ### **Step 3: Complete the Assignment**
 
 1. Write a "Hello World" Program
-Create a simple program in any programming language you are comfortable with. Save the file inside the repository folder.
+Create a simple program in Python programming language. Save the file inside the repository folder.
 
-Example (Python - hello.py):
-
-1. `hello.py` (Python)
+2. Edit the `hello.py` (Python) in your cloned repository.
 ```python
 print("Hello world!")
 ```
 
-2. Create the intro.txt file
-Open the intro.txt file in a text editor and provide the following details:
+3. Create the `intro.txt` file and Open the `intro.txt` file in a text editor and provide the following details:
 ```txt
 Name: [Your Full Name]
 Course: [Your Course Name]
 Interests in programming: [Your Interests]
 ```
-Also, print the same information in your hello.py
+
+4. Edit `hello.py`. Print the same information in your indicated in the `intro.txt`
+```python
+print("Hello world!")
+print("Name: [Your Full Name]")
+print("Course: [Your Course Name]")
+print("Interests in programming: [Your Interests]")
+```
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
